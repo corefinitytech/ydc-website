@@ -40,7 +40,7 @@ export default function SignatureRail(){
             <div className="signature-slide-photo"><Image src={drink.image} alt={`Concept visualization of ${drink.name} in a YDC branded cup`} fill sizes="(max-width: 768px) 82vw, 40vw"/></div>
             <div className="signature-slide-bottom"><div><span className="signature-slide-number">{String(i+1).padStart(2,'0')} / 08</span><h3>{drink.name}</h3><p>{drink.description}</p></div><div className="signature-slide-price">PKR {drink.priceHot}</div></div>
           </article>)}
-          <div className="signature-slide-end"><span>THE WHOLE LINEUP</span><h3>GOOD THINGS<br/>DON'T END<br/>HERE.</h3><p>More coffee, dessert and breakfast on the full menu.</p><Link href="/menu">EXPLORE FULL MENU <ArrowRight size={22}/></Link></div>
+          <div className="signature-slide-end"><span>THE WHOLE LINEUP</span><h3>GOOD THINGS<br/>DON’T END<br/>HERE.</h3><p>More coffee, dessert and breakfast on the full menu.</p><Link href="/menu">EXPLORE FULL MENU <ArrowRight size={22}/></Link></div>
         </div>
       </div>
       <div className="signatures-outro"><span>YDC / MADE FOR GOOD DAYS</span><span>01 — 08</span></div>
