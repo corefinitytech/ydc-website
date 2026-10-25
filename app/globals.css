@@ -49,7 +49,7 @@ section{scroll-margin-top:1rem}
 @keyframes introFailsafe{to{opacity:0;visibility:hidden}}
 .mascot-intro::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.64' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
 .intro-inner{position:relative;display:flex;align-items:center;flex-direction:column;justify-content:center;width:100%;min-height:76svh;text-align:center}
-.loader-topline{position:absolute;top:1.5rem;left:var(--gutter);right:var(--gutter);z-index:2;display:flex;justify-content:space-between;font:800 .6875rem var(--font-body);letter-spacing:.18em}
+.loader-topline{position:absolute;top:.75rem;min-height:var(--tap);align-items:center;left:var(--gutter);right:var(--gutter);z-index:2;display:flex;justify-content:space-between;font:800 .6875rem var(--font-body);letter-spacing:.18em}
 .loader-topline span:last-child{display:none}
 .intro-caption{font:800 .6875rem var(--font-body);letter-spacing:.22em;color:#1839ad;margin:0 0 .6rem}
 .loader-medallion{position:relative;width:min(64vw,40svh,21rem);aspect-ratio:1284/1225;transform-origin:center;animation:mascotEnter .85s cubic-bezier(.2,.8,.2,1) both}
