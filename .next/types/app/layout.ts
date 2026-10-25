@@ -1,4 +1,4 @@
-// File: C:\Users\PC\Downloads\ydc-coffee-v4-horizontal-signatures\ydc-v4\app\layout.tsx
+// File: C:\Users\NexGen\Desktop\ydc-website\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
