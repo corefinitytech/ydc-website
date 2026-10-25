@@ -2,10 +2,11 @@
 import {useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ArrowUpRight, ArrowRight, Menu, X, MapPin, Instagram, ArrowDown} from 'lucide-react';
+import {ArrowUpRight, ArrowRight, MapPin, Instagram, ArrowDown} from 'lucide-react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import SignatureRail from './SignatureRail';
+import SiteHeader from './SiteHeader';
 
 const marqueeWords=['GOOD COFFEE','GOOD PEOPLE','BETTER DAYS'];
 
@@ -13,7 +14,6 @@ export default function HomeExperience(){
  const [count,setCount]=useState(0);
  const [ready,setReady]=useState(false);
  const [skipVisible,setSkipVisible]=useState(true);
- const [menuOpen,setMenuOpen]=useState(false);
  const intro=useRef<HTMLDivElement>(null);
  const cup=useRef<HTMLDivElement>(null);
  const pointer=useRef({x:0,y:0});
@@ -30,7 +30,7 @@ export default function HomeExperience(){
     .fromTo('.ydc-blue-paint',{xPercent:75,opacity:0},{xPercent:0,opacity:1,duration:1.12,ease:'power4.out'},.49)
     .fromTo('.ydc-headline-line span',{xPercent:-106},{xPercent:0,duration:.96,ease:'power4.out',stagger:.115},.58)
     .fromTo('.ydc-cup-wrap',{xPercent:115,rotation:7,opacity:0},{xPercent:0,rotation:0,opacity:1,duration:1.23,ease:'power4.out'},.66)
-    .fromTo('.ydc-hero-header,.ydc-actions',{opacity:0,y:15},{opacity:1,y:0,duration:.55,stagger:.13},1.06)
+    .fromTo('.site-header,.ydc-actions',{opacity:0,y:15},{opacity:1,y:0,duration:.55,stagger:.13},1.06)
     .fromTo('.ydc-doodle',{opacity:0,scale:.65},{opacity:1,scale:1,duration:.56,stagger:.12,ease:'back.out(1.5)'},1.27)
     .fromTo('.ydc-side-note span',{opacity:0,clipPath:'inset(0 100% 0 0)'},{opacity:1,clipPath:'inset(0 0% 0 0)',duration:.29,stagger:.17,ease:'none'},1.37)
     .fromTo('.ydc-side-note svg',{strokeDasharray:160,strokeDashoffset:160,opacity:0},{strokeDashoffset:0,opacity:1,duration:.55},2.05);
@@ -66,12 +66,7 @@ export default function HomeExperience(){
    <section id="top" className="ydc-hero" onMouseMove={onMove} aria-label="YDC Coffee, big personality, serious coffee">
      <div className="ydc-blue-paint" aria-hidden="true" />
      <div className="ydc-ground" aria-hidden="true" />
-     <header className="ydc-hero-header">
-       <nav className="ydc-pill-nav" aria-label="Main navigation"><Link href="/menu">MENU</Link><a href="#story">OUR STORY</a><a href="#visit">FIND US</a></nav>
-       <Link href="/" className="ydc-hero-logo" aria-label="YDC home">YDC</Link>
-       <button className="ydc-mobile-toggle" aria-label={menuOpen?'Close navigation':'Open navigation'} aria-expanded={menuOpen} onClick={()=>setMenuOpen(v=>!v)}>{menuOpen?<X size={22}/>:<Menu size={22}/>}</button>
-     </header>
-     {menuOpen&&<nav className="ydc-mobile-links" aria-label="Mobile navigation"><Link onClick={()=>setMenuOpen(false)} href="/menu">MENU</Link><a onClick={()=>setMenuOpen(false)} href="#story">OUR STORY</a><a onClick={()=>setMenuOpen(false)} href="#visit">FIND US</a></nav>}
+     <SiteHeader/>
      <div className="ydc-headline" aria-label="Big personality. Serious coffee.">
        <div className="ydc-headline-line ydc-blue"><span>BIG</span></div>
        <div className="ydc-headline-line ydc-blue"><span>PERSONALITY.</span></div>
