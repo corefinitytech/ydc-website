@@ -136,6 +136,12 @@ section{scroll-margin-top:1rem}
 .signature-slide-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(circle at 50% 42%,#f6e7cd 0 34%,transparent 35%),linear-gradient(160deg,#efddc0,#e3cba5)}
 .signature-slide-photo::before{content:"YDC";position:absolute;inset:0;display:grid;place-items:center;font:900 clamp(3rem,8vw,5rem)/1 var(--font-display);letter-spacing:-.05em;color:rgba(11,48,189,.18)}
 .signature-slide-photo img{object-fit:cover;object-position:center 48%;transition:transform .6s ease}
+/* Equal photos: every card shares one text row sized by the longest copy (subgrid), so photo heights never differ. */
+@supports (grid-template-rows:subgrid){
+  .signatures-track{display:grid;grid-auto-flow:column;grid-template-rows:minmax(0,1fr) auto;row-gap:0}
+  .signature-slide{display:grid;grid-row:1 / span 2;grid-template-rows:subgrid}
+  .signature-slide-end{grid-row:1 / span 2}
+}
 .signature-slide:hover .signature-slide-photo img{transform:scale(1.045)}
 .signature-slide-bottom{flex:1 0 auto;display:flex;justify-content:space-between;gap:.75rem;padding:1.1rem 1.15rem 1.25rem}
 .signature-slide-number{font:800 var(--fs-label) var(--font-body);letter-spacing:.15em}
@@ -192,8 +198,11 @@ section{scroll-margin-top:1rem}
    ========================================================================== */
 .character-break{background:#f6e8cf;color:#1537ac;overflow:hidden;overflow:clip}
 .character-inner{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;align-items:center;padding-block:var(--section-y)}
-.character-face{width:min(72vw,22rem);justify-self:center;aspect-ratio:1284/1225;transform:rotate(-7deg)}
-.character-face img{width:100%;height:100%;object-fit:contain}
+/* Badge: cream disc + rotating text ring, mascot on top */
+.character-face{position:relative;width:min(80vw,24rem);justify-self:center;aspect-ratio:1;display:grid;place-items:center;transform:rotate(-7deg)}
+.character-face::before{content:"";position:absolute;inset:11%;border-radius:50%;background:#edd9b7;box-shadow:inset 0 0 0 2px rgba(21,55,172,.18)}
+.character-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:#1537ac;font:800 12.5px var(--font-body);letter-spacing:.08em}
+.character-face img{position:relative;width:74%;height:auto;object-fit:contain;filter:drop-shadow(0 14px 14px rgba(21,42,111,.14))}
 .character-words{position:relative;z-index:2}
 .character-words h2{font:900 clamp(3.25rem,min(9vw,18svh),10.5rem)/.84 var(--font-display);letter-spacing:-.025em;margin:1.25rem 0 1.5rem}
 .character-words h2 em{color:#10151f}
@@ -201,7 +210,7 @@ section{scroll-margin-top:1rem}
 .character-spark{position:absolute;top:calc(var(--section-y) * .6);right:var(--gutter);font-size:clamp(3rem,6vw,5rem);line-height:1;color:#1236ac}
 @media(min-width:768px){
   .character-inner{grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);gap:clamp(1.5rem,4vw,4rem)}
-  .character-face{width:100%;max-width:30rem}
+  .character-face{width:100%;max-width:34rem}
 }
 @media(min-width:1024px){
   .character-inner{min-height:min(100svh,56rem)}

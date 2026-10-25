@@ -102,6 +102,7 @@ export default function HomeExperience(){
    gsap.fromTo('.character-face',{scale:.55,rotation:-35,autoAlpha:0},{scale:1,rotation:-7,autoAlpha:1,duration:1.4,ease:'elastic.out(1,.55)',scrollTrigger:{trigger:'.character-inner',start:'top 75%',once:true}});
    gsap.fromTo('.character-face img',{rotation:-6},{rotation:8,yPercent:-4,ease:'none',scrollTrigger:scrub('.character-break')});
    gsap.to('.character-spark',{rotation:300,ease:'none',scrollTrigger:scrub('.character-break')});
+   gsap.fromTo('.character-ring',{rotation:-40},{rotation:140,ease:'none',scrollTrigger:scrub('.character-break')});
 
    // Visit: the YDC circle rolls in from the right edge
    gsap.fromTo('.visit-art',{xPercent:desktop?40:30,rotation:-120},{xPercent:0,rotation:-14,ease:'none',scrollTrigger:scrub('.visit-section','top bottom',desktop?'center 60%':'top 20%')});
@@ -147,7 +148,7 @@ export default function HomeExperience(){
    </section>
    <section className="character-break" aria-labelledby="character-title">
      <div className="container character-inner">
-       <div className="character-face"><Image src="/images/ydc-mascot-clean.png" width={1284} height={1225} sizes="(min-width: 768px) 38vw, 72vw" alt="Illustrated YDC character wearing the signature cobalt blue cap"/></div>
+       <div className="character-face"><svg className="character-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="character-ring-path" d="M100 100m-84 0a84 84 0 1 1 168 0a84 84 0 1 1-168 0"/></defs><text><textPath href="#character-ring-path" textLength="526" lengthAdjust="spacing">GOOD COFFEE ✳ GOOD PEOPLE ✳ BETTER DAYS ✳</textPath></text></svg><Image src="/images/ydc-mascot-clean.png" width={1284} height={1225} sizes="(min-width: 768px) 38vw, 72vw" alt="Illustrated YDC character wearing the signature cobalt blue cap"/></div>
        <div className="character-words"><span className="section-number">THAT’S OUR GUY.</span><RevealLines id="character-title" lines={['THE FACE','BEHIND THE',<em key="g">GOOD DAYS.</em>]}/><p>A little mischievous. A lot of heart. You’ll know us when you see us.</p></div>
        <span className="character-spark" aria-hidden="true">✳</span>
      </div>
