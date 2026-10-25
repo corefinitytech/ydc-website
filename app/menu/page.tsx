@@ -3,11 +3,13 @@ import Link from 'next/link';
 import {ArrowLeft, ArrowUpRight} from 'lucide-react';
 import {addOns, menuCategories, signatureDrinks} from '@/components/menu-data';
 import RevealLines from '@/components/RevealLines';
+import MenuMotion from '@/components/MenuMotion';
 
 
 export default function MenuPage(){
   return (
     <main className="menu-page">
+      <MenuMotion/>
       <section className="menu-hero container">
         <div className="menu-hero-top">
           <Link href="/" className="menu-back"><ArrowLeft size={18} aria-hidden="true"/> BACK HOME</Link>

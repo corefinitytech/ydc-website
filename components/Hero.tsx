@@ -40,9 +40,9 @@ export default function Hero({interactive}:{interactive:boolean}){
           </div>
           <Image src="/images/hero-beans-left.png" width={254} height={211} alt="" className="hero-beans hero-beans-left" sizes="(min-width: 1024px) 13vw, 30vw" priority/>
           <Image src="/images/hero-beans-right.png" width={217} height={269} alt="" className="hero-beans hero-beans-right" sizes="(min-width: 1024px) 11vw, 26vw" priority/>
-          <svg className="ydc-crown ydc-doodle" viewBox="0 0 95 88" fill="none" aria-hidden="true"><path d="M13 61 8 18l25 21L47 7l14 33 26-22-11 46-63-3ZM20 75l49 5" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          <svg className="ydc-rays ydc-doodle" viewBox="0 0 72 92" fill="none" aria-hidden="true"><path d="m8 11 24 19M50 7l-3 28M67 49l-28 2M54 80 34 67" stroke="currentColor" strokeWidth="5" strokeLinecap="round"/></svg>
-          <p className="ydc-side-note"><span>GOOD</span><span>COFFEE</span><span>PEOPLE</span><span>TOO</span><svg viewBox="0 0 130 19" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13 Q65 2 127 6" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/></svg></p>
+          <svg className="ydc-crown ydc-doodle" viewBox="0 0 95 88" fill="none" aria-hidden="true"><path pathLength={1} d="M13 61 8 18l25 21L47 7l14 33 26-22-11 46-63-3ZM20 75l49 5" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <svg className="ydc-rays ydc-doodle" viewBox="0 0 72 92" fill="none" aria-hidden="true"><path pathLength={1} d="m8 11 24 19M50 7l-3 28M67 49l-28 2M54 80 34 67" stroke="currentColor" strokeWidth="5" strokeLinecap="round"/></svg>
+          <p className="ydc-side-note"><span>GOOD</span><span>COFFEE</span><span>PEOPLE</span><span>TOO</span><svg viewBox="0 0 130 19" preserveAspectRatio="none" aria-hidden="true"><path pathLength={1} d="M3 13 Q65 2 127 6" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/></svg></p>
         </div>
       </div>
     </div>
