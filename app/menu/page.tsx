@@ -2,21 +2,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {ArrowLeft, ArrowUpRight} from 'lucide-react';
 import {addOns, menuCategories, signatureDrinks} from '@/components/menu-data';
+import RevealLines from '@/components/RevealLines';
 
 
 export default function MenuPage(){
   return (
     <main className="menu-page">
-      <section className="menu-hero">
+      <section className="menu-hero container">
         <div className="menu-hero-top">
-          <Link href="/" className="menu-back"><ArrowLeft size={18}/> BACK HOME</Link>
-          <div className="menu-hero-mark">YDC</div>
-          <a href="https://www.instagram.com/ydccoffee/" target="_blank" rel="noreferrer" className="menu-instagram">INSTAGRAM <ArrowUpRight size={16}/></a>
+          <Link href="/" className="menu-back"><ArrowLeft size={18} aria-hidden="true"/> BACK HOME</Link>
+          <Link href="/" className="menu-hero-mark" aria-label="YDC home">YDC</Link>
+          <a href="https://www.instagram.com/ydccoffee/" target="_blank" rel="noreferrer" className="menu-instagram">INSTAGRAM <ArrowUpRight size={16} aria-hidden="true"/></a>
         </div>
         <div className="menu-hero-grid">
           <div className="menu-hero-copy">
             <span className="section-number">FULL MENU / ALL DAY GOODNESS</span>
-            <h1>THE MENU.</h1>
+            <RevealLines as="h1" lines={['THE MENU.']}/>
             <p>Everything people come back for, organised clearly and presented with the same cream-and-cobalt YDC identity.</p>
             <div className="menu-hero-pills">
               <span>HOT &amp; COLD COFFEE</span>
@@ -27,17 +28,17 @@ export default function MenuPage(){
           <div className="menu-hero-signatures">
             {signatureDrinks.slice(0,3).map((drink)=> (
               <div key={drink.slug} className="menu-hero-shot">
-                <Image src={drink.image} alt={drink.name} fill sizes="(max-width: 900px) 100vw, 22vw"/>
+                <Image src={drink.image} alt={drink.name} fill sizes="(min-width: 1024px) 15vw, 31vw"/>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="menu-signatures-strip">
+      <section className="menu-signatures-strip container">
         <div className="section-heading compact">
           <span className="section-number">YDC SIGNATURES</span>
-          <h2>THE ONES<br/><em>YOU REMEMBER.</em></h2>
+          <RevealLines lines={['THE ONES',<em key="y">YOU REMEMBER.</em>]}/>
         </div>
         <div className="signature-mini-grid">
           {signatureDrinks.map((drink)=> (
@@ -52,7 +53,7 @@ export default function MenuPage(){
         </div>
       </section>
 
-      <section className="menu-categories">
+      <section className="menu-categories container">
         {menuCategories.map((category)=> (
           <article className="menu-category-card" key={category.slug} id={category.slug}>
             <div className="menu-category-head">
@@ -93,11 +94,11 @@ export default function MenuPage(){
         ))}
       </section>
 
-      <section className="menu-addons">
+      <section className="menu-addons container">
         <div className="menu-addons-inner">
           <div>
             <span className="section-number">ADD ONS</span>
-            <h2>A LITTLE<br/><em>EXTRA.</em></h2>
+            <RevealLines lines={['A LITTLE',<em key="e">EXTRA.</em>]}/>
           </div>
           <div className="addons-list">
             {addOns.map((item)=> <span key={item}>{item}</span>)}
