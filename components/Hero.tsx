@@ -9,8 +9,8 @@ import SiteHeader from './SiteHeader';
 // Everything inside .hero-art-box is positioned in % of that box, so the cup, beans,
 // blue shape and doodles scale together at every viewport size.
 export default function Hero({interactive}:{interactive:boolean}){
-  const cup=useRef<HTMLDivElement>(null);
-  const onMove=(e:React.MouseEvent<HTMLElement>)=>{
+   const cup=useRef<HTMLDivElement>(null);
+   const onMove=(e:React.MouseEvent<HTMLElement>)=>{
     if(!interactive||!cup.current||window.matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches)return;
     const r=e.currentTarget.getBoundingClientRect();
     const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
